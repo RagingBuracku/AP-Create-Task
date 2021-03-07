@@ -3,13 +3,19 @@ import csv
 fields = ['Email', 'Password', 'URL']
 
 # data rows of csv file  
-rows = [ ['Nikhil', 'COE', '2', '9.0'],  
-         ['Sanchit', 'COE', '2', '9.1'],  
-         ['Aditya', 'IT', '2', '9.3'],  
-         ['Sagar', 'SE', '1', '9.5'],  
-         ['Prateek', 'MCE', '3', '7.8'],  
-         ['Sahil', 'EP', '2', '9.1']]  
-    
+a,b,c = input("Please Enter your Email, Password, and Website URL with a space in between each:").split()
+
+print("Your Email is:", a)
+
+print("Your Password is:", b)
+
+print("The Website is:", c)
+
+print("Your password.csv file should be in your foulder where the program is located")   
+
+rows = [ [a, b, c ],
+['unga bunga', 'bunga boo']]
+
 # name of csv file  
 filename = "Passwords.csv"
     
@@ -23,4 +29,4 @@ with open(filename, 'w') as csvfile:
         
     # writing the data rows  
     csvwriter.writerows(rows) 
-    # unga bunga
+    
