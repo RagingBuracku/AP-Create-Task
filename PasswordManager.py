@@ -3,24 +3,24 @@ import csv
 fields = ['Email', 'Password', 'URL']
 
 # data rows of csv file  
-a,b,c = input("Please Enter your Email, Password, and Website URL with a space in between each:").split()
+email,password,url = input("Please Enter your Email, Password, and Website URL with a space in between each:").split()
 
-print("Your Email is:", a)
+print("Your Email is:", email)
 
-print("Your Password is:", b)
+print("Your Password is:", password)
 
-print("The Website is:", c)
+print("The Website is:", url)
 
 print("Your password.csv file should be in your foulder where the program is located")   
 
-rows = [ [a, b, c ],
+rows = [ [email, passwor, url ],
 ['unga bunga', 'bunga boo']]
 
 # name of csv file  
 filename = "Passwords.csv"
     
 # writing to csv file  
-with open(filename, 'w') as csvfile:  
+with open(filename) as csvfile:  
     # creating a csv writer object  
     csvwriter = csv.writer(csvfile)  
         
