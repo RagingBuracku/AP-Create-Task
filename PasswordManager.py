@@ -1,4 +1,16 @@
 import csv
+import tkinter
+
+# GUI setup
+# Colors: honeydew: #F0FFF0, white: #FFFFFF
+ws = Tk()
+ws.title("Passsword Manager")
+ws.geometry('500x300')
+ws.configure(bg='#FFFFFF')
+
+#GUI login & 
+login = tk.button(text="Login", width=25, height=5, fg='#F0FFF0', bg='#FFFFFF')
+register = tk.button(text="Register", fg='#F0FFF0', bg='#FFFFFF')
 
 fields = ['Email', 'Password', 'URL']
 
@@ -29,3 +41,5 @@ with open(filename, 'w', newline="\n") as csvfile:
     # writing the data rows  
     csvwriter.writerows(rows) 
     
+winddow.mainloop()
+
