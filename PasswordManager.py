@@ -13,14 +13,13 @@ print("The Website is:", c)
 
 print("Your password.csv file should be in your foulder where the program is located")   
 
-rows = [ [a, b, c ],
-['unga bunga', 'bunga boo']]
+rows = [ [a, b, c ] ]
 
 # name of csv file  
 filename = "Passwords.csv"
     
 # writing to csv file  
-with open(filename, 'w') as csvfile:  
+with open(filename, 'w', newline="\n") as csvfile:  
     # creating a csv writer object  
     csvwriter = csv.writer(csvfile)  
         
