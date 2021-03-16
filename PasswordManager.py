@@ -1,4 +1,18 @@
 import csv
+import tkinter
+tkinter, csv
+
+
+# GUI setup
+# Colors: honeydew: #F0FFF0, white: #FFFFFF
+ws = tkinter.Tk()
+ws.title("Passsword Manager")
+ws.geometry('500x300')
+ws.configure(bg='#FFFFFF')
+
+#GUI login & 
+login = tkinter.Tk.button(text="Login", width=25, height=5, fg='#F0FFF0', bg='#FFFFFF')
+register = tkinter.Tk.button(text="Register", fg='#F0FFF0', bg='#FFFFFF')
 
 fields = ['Email', 'Password', 'URL']
 
@@ -13,7 +27,8 @@ print("The Website is:", c)
 
 print("Your password.csv file should be in your foulder where the program is located")   
 
-rows = [ [a, b, c ] ]
+rows = [ [a, b, c ],
+['unga bunga', 'bunga boo']]
 
 # name of csv file  
 filename = "Passwords.csv"
@@ -29,3 +44,5 @@ with open(filename, 'w', newline="\n") as csvfile:
     # writing the data rows  
     csvwriter.writerows(rows) 
     
+ws.mainloop()
+
