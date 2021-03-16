@@ -1,0 +1,67 @@
+import csv
+from tkinter import *
+
+# GUI
+ws = Tk()
+ws.title("Password Manager")
+ws.geometry('500x300')
+ws.configure(bg='#FFFFFF')
+
+emailLabel = Label(ws, text="Email/Username")
+emailEntry = Entry()
+
+pwLabel = Label(ws, text="Password")
+pwEntry = Entry(show="*")
+
+urlLabel = Label(ws, text="URL")
+urlEntry = Entry()
+
+# Grid Method
+emailLabel.grid(row=0, column=0)
+emailEntry.grid(row=0, column=1)
+pwLabel.grid(row=1, column=0)
+pwEntry.grid(row=1, column=1)
+urlLabel.grid(row=2, column=0)
+urlEntry.grid(row=2, column=1)
+
+# Submit button
+def submit():
+    email = emailEntry.get()
+    pw = pwEntry.get()
+    url = urlEntry.get()
+    print(url + pw + email)
+
+subButton = Button(ws, text="Submit", command=submit())
+subButton.grid(row=3, column=0)
+
+
+fields = ['Email', 'Password', 'URL']
+
+# data rows of csv file
+a,b,c = input("Please Enter your Email, Password, and Website URL with a space in between each:").split()
+
+print("Your Email is:", a)
+
+print("Your Password is:", b)
+
+print("The Website is:", c)
+
+print("Your password.csv file should be in your folder where the program is located")
+
+rows = [ [a, b, c ] ]
+
+# name of csv file
+filename = "Passwords.csv"
+
+# writing to csv file
+with open(filename, 'w', newline="\n") as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+
+    # writing the fields
+    csvwriter.writerow(fields)
+
+    # writing the data rows
+    csvwriter.writerows(rows)
+
+ws.mainloop()
